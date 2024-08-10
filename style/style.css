@@ -1,65 +1,133 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+	font-family: "Plus Jakarta Sans", sans-serif;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
 }
 
 header h1 {
-  margin-left: 20px;
+	margin-left: 20px;
 }
 
 header div {
-  margin-right: 20px;
+	margin-right: 20px;
 }
 
 header img {
-  width: 30px;
-  height: 30px;
-  margin-left: 10px;
+	width: 30px;
+	height: 30px;
+	margin-left: 10px;
 }
 
 main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .hero-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 10rem 20rem;
-  text-align: center;
-  gap: 6rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 10rem 20rem;
+	text-align: center;
+	gap: 6rem;
 }
 
 .hero-container h1 {
-  font-size: 8rem;
+	font-size: 8rem;
 }
 
 .hero-container p {
-  font-size: 2rem;
+	font-size: 2rem;
+}
+
+.gallery-container {
+	margin: 7rem 0;
+}
+.gallery-container h1 {
+	font-size: 4rem;
+	font-weight: 700;
+	text-align: center;
+}
+.gallery {
+	display: flex;
+	margin: 4rem 15rem 10rem 15rem;
+	flex-flow: row wrap;
+	gap: 24px;
+}
+
+.gallery-cards {
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+	height: 400px;
+	width: 800px;
+	border-radius: 10px;
+	flex: 1 1 calc(50% - 16px);
+	overflow: hidden;
+	transition: 0.4s ease-in-out;
+	justify-content: center;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.gallery-cards:hover {
+	box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-cards img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	transition: 0.4s ease-in-out;
+}
+
+.gallery-cards img:hover {
+	scale: 120%;
 }
 
 footer {
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  bottom: 0;
-  width: 100%;
-  position: relative;
+	justify-content: center;
+	text-align: center;
+	padding: 20px;
+	bottom: 0;
+	width: 100%;
+	position: relative;
+	border-top: solid 1px rgb(199, 199, 199);
+}
+
+@media screen and (max-width: 1024px) {
+	.hero-container {
+		margin: 5rem 10rem;
+	}
+
+	.gallery {
+		margin: 5rem;
+	}
+}
+
+@media screen and (max-width: 1460px) {
+	.hero-container {
+		flex-direction: column;
+	}
+
+	.gallery {
+		flex-flow: column nowrap;
+	}
+
+	.gallery-cards img {
+		vertical-align: bottom;
+	}
 }
