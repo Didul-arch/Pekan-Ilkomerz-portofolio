@@ -85,6 +85,7 @@ main {
 
 .gallery-cards:hover {
 	box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
 }
 
 .gallery-cards img {
@@ -131,3 +132,72 @@ footer {
 		vertical-align: bottom;
 	}
 }
+
+@media screen and (max-width: 560px) {
+	.hero-container h1{
+		font-size: 5rem;
+	}
+	.hero-container p{
+		font-size: 1.5rem;
+		margin: auto 1rem;
+	}
+
+	.hero-container{
+	margin: 6rem 1rem;
+	}
+
+	.gallery-container h1{
+		font-size: 3.5rem;
+	}
+}
+
+/* Untuk Modal */
+
+.modal {
+	display: none;
+	position: fixed;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+	border-radius: 6px;
+}
+
+#caption {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+	text-align: center;
+	color: #ccc;
+	padding: 10px 0;
+}
+
+.close {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* Akhir Modal */

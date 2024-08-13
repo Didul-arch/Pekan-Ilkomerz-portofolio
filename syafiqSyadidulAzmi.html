@@ -34,31 +34,64 @@
 			</div>
 			<hr style="border: 1px solid #ccc; margin: 20px 144px" />
 			<div class="gallery-container">
-        <h1>Dul's Gallery</h1>
+				<h1>Dul's Gallery</h1>
 				<div class="gallery">
 					<div class="gallery-cards">
-						<img src="style/assets/gajah.jpg" alt="foto gajah" />
+						<img src="style/assets/gajah.jpg" alt="gajah safari" />
 					</div>
 					<div class="gallery-cards">
-						<img src="style/assets/gunung1.jpg" alt="gunung1" />
+						<img src="style/assets/gunung1.jpg" alt="gunung" />
 					</div>
 					<div class="gallery-cards">
-						<img src="/style/assets/gunung2.jpg" alt="gunung2" />
+						<img src="/style/assets/gunung2.jpg" alt="gunung" />
 					</div>
 					<div class="gallery-cards">
-						<img src="/style/assets/jakarta1.jpg" alt="jakarta1" />
+						<img src="/style/assets/jakarta1.jpg" alt="jakarta yang indah" />
 					</div>
 					<div class="gallery-cards">
-						<img src="/style/assets/jakarta2.jpg" alt="jakarta2" />
+						<img src="/style/assets/jakarta2.jpg" alt="jakarta yang indah" />
 					</div>
 					<div class="gallery-cards">
-						<img src="/style/assets/wandy.jpg" alt="wandy" />
+						<img src="/style/assets/wandy.jpg" alt="wandy dalam kelas" />
 					</div>
 				</div>
+			</div>
+			<div id="deskripsi">
+				<h2>Deskripsi Diriku</h2>
+				<p></p>
 			</div>
 		</main>
 		<footer>
 			<h2>Made with Love, by Didul.</h2>
 		</footer>
+		<div id="galleryModal" class="modal">
+			<span class="close">&times;</span>
+			<img class="modal-content" id="modalImage" />
+			<div id="caption"></div>
+		</div>
+		<script>
+			var modal = document.getElementById("galleryModal");
+			var modalImg = document.getElementById("modalImage");
+			var captionText = document.getElementById("caption");
+
+			document.querySelectorAll(".gallery-cards img").forEach((img) => {
+				img.onclick = function () {
+					modal.style.display = "block";
+					modalImg.src = this.src;
+					captionText.innerHTML = this.alt;
+				};
+			});
+
+			modal.onclick = function (event) {
+				if (event.target === modal) {
+					modal.style.display = "none";
+				}
+			};
+
+			var span = document.getElementsByClassName("close")[0];
+			span.onclick = function () {
+				modal.style.display = "none";
+			};
+		</script>
 	</body>
 </html>
